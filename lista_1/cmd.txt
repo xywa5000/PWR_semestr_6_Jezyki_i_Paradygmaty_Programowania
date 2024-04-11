@@ -1,0 +1,5 @@
+recursive:
+gcc -fdiagnostics-color=always -g test_recursive_lib.c recursive_lib.c -o test_recursive_lib
+
+iteration:
+gcc -fdiagnostics-color=always -g test_iterative_lib.c iterative_lib.c -o test_iterative_lib
