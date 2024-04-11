@@ -1,5 +1,6 @@
 #include "recursive_lib.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 // Implementacja funkcji rekurencyjnej obliczającej silnię
 unsigned long long factorial(unsigned int n) {
@@ -34,14 +35,7 @@ Solution diophantine(int a, int b, int c) {
     }
     
     // Rekurencyjne wywołanie funkcji pomocniczej do obliczenia współczynników x i y
-    sol = diophantine_helper(a, b, c);
-    
-    // Obliczenie rozwiązania dla równania diofantycznego
-    int k = c / d;
-    sol.x *= k;
-    sol.y *= k;
-    
-    return sol;
+    return diophantine_helper(a, b, c);
 }
 
 // Funkcja pomocnicza do obliczenia współczynników x i y przy pomocy rekurencyjnego algorytmu Euklidesa

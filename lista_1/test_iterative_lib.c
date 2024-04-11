@@ -17,23 +17,7 @@ int main() {
     printf("\nPodaj wspolczynniki a, b i c dla rownania diofantycznego ax + by = c: ");
     scanf("%d %d %d", &a, &b, &c);
     Solution sol = diophantine(a, b, c);
-    printf("Rozwiazanie: x = %d, y = %d\n", sol.x, sol.y);
-
-    printf("========================================\n");
-
-    sol = diophantine(3, 7, 12);
-    printf("Rozwiazanie: x = %d, y = %d\n", sol.x, sol.y);
-
-    sol = diophantine(13, 6, 11);
-    printf("Rozwiazanie: x = %d, y = %d\n", sol.x, sol.y);
-
-    sol = diophantine(9, 2, 1);
-    printf("Rozwiazanie: x = %d, y = %d\n", sol.x, sol.y);
-
-    sol = diophantine(7, 17, 9);
-    printf("Rozwiazanie: x = %d, y = %d\n", sol.x, sol.y);
-
-    sol = diophantine(12, 15, 17);
+    printf("Error: %s\n", sol.err ? "true" : "false");
     printf("Rozwiazanie: x = %d, y = %d\n", sol.x, sol.y);
 
     return 0;
