@@ -10,7 +10,7 @@ typedef struct {
 } Solution;
 
 // Deklaracja funkcji rekurencyjnej obliczającej silnię
-unsigned long long factorial(unsigned int n);
+long long factorial(int n);
 
 // Deklaracja funkcji rekurencyjnej obliczającej największy wspólny dzielnik (NWD)
 unsigned int gcd(unsigned int a, unsigned int b);

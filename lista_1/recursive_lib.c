@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 // Implementacja funkcji rekurencyjnej obliczającej silnię
-unsigned long long factorial(unsigned int n) {
+long long factorial(int n) {
     if (n < 0)
         return -1;
     else if (n == 0 || n == 1)

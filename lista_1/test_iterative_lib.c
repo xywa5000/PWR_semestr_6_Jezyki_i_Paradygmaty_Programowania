@@ -2,11 +2,11 @@
 #include "iterative_lib.h"
 
 int main() {
-    unsigned int n;
     printf("Biblioteka iteracyjna \n\n");
+    unsigned int n;
     printf("Podaj liczbe naturalna do obliczenia silni: ");
-    scanf("%u", &n);
-    printf("%u! = %llu\n", n, factorial(n));
+    scanf("%d", &n);
+    printf("%d! = %lld\n", n, factorial(n));
 
     unsigned int a, b;
     printf("\nPodaj dwie liczby naturalne do obliczenia NWD: ");
