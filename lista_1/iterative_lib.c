@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 // Implementacja funkcji iteracyjnej obliczającej silnię
-long long factorial(int n) {
+long long factorial_iterative(int n) {
     if (n < 0)
         return -1;
     long long result = 1;
@@ -13,7 +13,7 @@ long long factorial(int n) {
 }
 
 // Implementacja funkcji iteracyjnej obliczającej NWD
-unsigned int gcd(unsigned int a, unsigned int b) {
+unsigned int gcd_iterative(unsigned int a, unsigned int b) {
     while (b != 0) {
         unsigned int temp = b;
         b = a % b;
@@ -23,10 +23,10 @@ unsigned int gcd(unsigned int a, unsigned int b) {
 }
 
 // Implementacja funkcji iteracyjnej rozwiązującej równanie diofantyczne
-Solution diophantine(int a, int b, int c) {
+Solution diophantine_iterative(int a, int b, int c) {
     Solution sol = {0, 0, false};
     
-    int gcd_ab = gcd(a, b);
+    int gcd_ab = gcd_iterative(a, b);
     if (c % gcd_ab != 0) {
         // Brak rozwiązania, gdy c nie jest podzielne przez NWD(a, b)
         sol.err = true;
@@ -55,7 +55,7 @@ Solution diophantine(int a, int b, int c) {
     }
     
     // Obliczenie rozwiązania dla równania diofantycznego
-    int k = c / gcd(a, b);
+    int k = c / gcd_iterative(a, b);
     sol.x = x * k;
     sol.y = y * k;
     
