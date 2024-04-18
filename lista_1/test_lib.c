@@ -1,26 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 #include "iterative_lib.h"
 #include "recursive_lib.h"
 #include "struct_lib.h"
 
-
-int randomInRange(int n, int m) {
-    // Inicjalizacja generatora liczb pseudolosowych za pomocą czasu
-    srand(time(NULL));
-
-    // Obliczanie zakresu losowania
-    int range = m - n + 1;
-
-    // Generowanie losowej liczby w zakresie [0, range-1]
-    int random_number = rand() % range;
-
-    // Dodanie przesunięcia, aby liczba była w przedziale [n, m]
-    random_number += n;
-
-    return random_number;
-}
 
 void test_factorial(int input, long long answer) {
     long long result_iterative = factorial_iterative(input);
@@ -39,6 +22,7 @@ void test_gcd(unsigned int input_x, unsigned int input_y, unsigned int answer) {
     printf("\t\trecursive : gcd(%u, %u) = %u : %s\n", input_x, input_y, result_recursive, (result_recursive == answer) ? "TRUE" : "FALSE");
 }
 
+
 void test_diophantine(int input_a, int input_b, int input_c) {
     Solution sol_iterative = diophantine_iterative(input_a, input_b, input_c);
     Solution sol_recursive = diophantine_recursive(input_a, input_b, input_c);
@@ -49,6 +33,7 @@ void test_diophantine(int input_a, int input_b, int input_c) {
     printf("\t\titerative : diophantine(%dx + %dy = %d) = %d, %d : err = %s : %s\n", input_a, input_b, input_c, sol_iterative.x, sol_iterative.y, sol_iterative.err ? "true" : "false", iterative_condition ? "TRUE" : "FALSE");
     printf("\t\trecursive : diophantine(%dx + %dy = %d) = %d, %d : err = %s : %s\n", input_a, input_b, input_c, sol_recursive.x, sol_recursive.y, sol_recursive.err ? "true" : "false", recursive_condition ? "TRUE" : "FALSE");
 }
+
 
 int main() {
 
@@ -72,6 +57,8 @@ int main() {
     test_diophantine(3, 5 , 6);
     test_diophantine(8, 6, 11);
     test_diophantine(68, 143, 45);
+    test_diophantine(21, 209, 13);
+    test_diophantine(31, 747, 90);
 
     return 0;
 }
