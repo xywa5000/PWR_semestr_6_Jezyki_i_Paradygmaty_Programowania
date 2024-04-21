@@ -1,8 +1,17 @@
-recursive:
-gcc -fdiagnostics-color=always -g test_recursive_lib.c recursive_lib.c struct_lib.h -o test_recursive_lib
+c_library:
 
-iteration:
-gcc -fdiagnostics-color=always -g test_iterative_lib.c iterative_lib.c struct_lib.h -o test_iterative_lib
+    recursive:
+    gcc -fdiagnostics-color=always -g test_recursive_lib.c recursive_lib.c struct_lib.h -o test_recursive_lib
 
-all:
-gcc -fdiagnostics-color=always -g test_lib.c iterative_lib.c recursive_lib.c struct_lib.h -o test_lib
+    iteration:
+    gcc -fdiagnostics-color=always -g test_iterative_lib.c iterative_lib.c struct_lib.h -o test_iterative_lib
+
+    all:
+    gcc -fdiagnostics-color=always -g test_lib.c iterative_lib.c recursive_lib.c struct_lib.h -o test_lib
+
+ada_library:
+
+    iteration:
+    gnatmake test_iterative_lib.adb
+
+    
