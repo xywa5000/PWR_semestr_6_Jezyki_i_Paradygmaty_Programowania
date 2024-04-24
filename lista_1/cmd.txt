@@ -11,6 +11,9 @@ c_library:
 
 ada_library:
 
+    recursive:
+    gnatmake test_recursive_lib.adb
+
     iteration:
     gnatmake test_iterative_lib.adb
 

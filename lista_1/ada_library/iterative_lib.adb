@@ -1,5 +1,7 @@
 -- Implementacja pakietu zawierającego funkcje iteracyjne
 
+with Struct_Lib; use Struct_Lib;
+
 package body Iterative_Lib is
 
    -- Implementacja funkcji obliczającej silnię iteracyjnie
