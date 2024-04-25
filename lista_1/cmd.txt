@@ -1,32 +1,45 @@
-c_library:
+Libraries:
 
-    recursive:
-    gcc -fdiagnostics-color=always -g test_recursive_lib.c recursive_lib.c struct_lib.h -o test_recursive_lib
+    c_library:
 
-    iterative:
-    gcc -fdiagnostics-color=always -g test_iterative_lib.c iterative_lib.c struct_lib.h -o test_iterative_lib
+        recursive:
+        gcc -fdiagnostics-color=always -g test_recursive_lib.c recursive_lib.c struct_lib.h -o test_recursive_lib
 
-    all:
-    gcc -fdiagnostics-color=always -g test_lib.c iterative_lib.c recursive_lib.c struct_lib.h -o test_lib
+        iterative:
+        gcc -fdiagnostics-color=always -g test_iterative_lib.c iterative_lib.c struct_lib.h -o test_iterative_lib
 
-ada_library:
+        all:
+        gcc -fdiagnostics-color=always -g test_lib.c iterative_lib.c recursive_lib.c struct_lib.h -o test_lib
 
-    recursive:
-    gnatmake test_recursive_lib.adb
+    ada_library:
 
-    iterative:
-    gnatmake test_iterative_lib.adb
+        recursive:
+        gnatmake test_recursive_lib.adb
 
-    all:
-    gnatmake test_lib.adb
+        iterative:
+        gnatmake test_iterative_lib.adb
 
-python_library:
+        all:
+        gnatmake test_lib.adb
 
-    recursive:
-    python test_recursive_lib.py
+    python_library:
 
-    iterative:
-    python test_iterative_lib.py
+        recursive:
+        python3 test_recursive_lib.py
 
-    all:
-    python test_lib.py
+        iterative:
+        python3 test_iterative_lib.py
+
+        all:
+        python3 test_lib.py
+
+Wrappers:
+
+    c_lib_wrapper.py:
+        all:
+        gcc -shared -o iterative_lib.so iterative_lib.c -fPIC
+        gcc -shared -o recursive_lib.so recursive_lib.c -fPIC
+        python3 test_c_lib_wrapper.py
+
+    python_lib_wrapper.c:
+        
