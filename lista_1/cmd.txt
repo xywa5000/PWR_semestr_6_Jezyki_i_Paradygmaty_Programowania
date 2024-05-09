@@ -35,7 +35,7 @@ Libraries:
 
 Wrappers:
 
-    c_lib_wrapper.py:
+    c_to_python:
 
         gcc -shared -o iterative_lib.so iterative_lib.c -fPIC
         gcc -shared -o recursive_lib.so recursive_lib.c -fPIC
@@ -43,10 +43,16 @@ Wrappers:
 
     python_lib_wrapper.c:
         
-    ada_lib_wrapper.c:
+    ada_to_c:
 
         gnatmake -gnato ./ada_library/iterative_lib.adb ./ada_library/recursive_lib.adb
         gcc -c ./ada_to_c/test_ada_lib_wrapper.c ./ada_to_c/ada_lib_wrapper.c
         gcc -o test_ada_lib_wrapper test_ada_lib_wrapper.o ada_lib_wrapper.o iterative_lib.o recursive_lib.o struct_lib.o -lgnat
 
-    c_lib_wrapper.adb:
+    c_to_ada:
+
+	gcc -c iterative_lib.c
+	gcc -c recursive_lib.c
+	gnatmake test_c_lib_wrapper.adb
+	x86_64-linux-gnu-gnatlink-10 test_c_lib_wrapper.ali iterative_lib.o recursive_lib.o
+
