@@ -42,6 +42,8 @@ Wrappers:
         python3 test_c_lib_wrapper.py
 
     python_lib_wrapper.c:
+
+	gcc -o test_python_lib_wrapper ./python_to_c/test_python_lib_wrapper.c ./python_to_c/python_lib_wrapper.c -I/usr/include/python3.10 -lpython3.10
         
     ada_to_c:
 
