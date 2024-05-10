@@ -11,8 +11,8 @@ class Solution(Structure):
 
 
 # Ładowanie biblioteki C
-c_iterative_lib = ctypes.CDLL('c_library/iterative_lib.so')
-c_recursive_lib = ctypes.CDLL('c_library/recursive_lib.so')
+c_iterative_lib = ctypes.CDLL('./iterative_lib.so')
+c_recursive_lib = ctypes.CDLL('./recursive_lib.so')
 
 # Deklaracja typów argumentów i zwracanych wartości dla funkcji biblioteki C
 c_iterative_lib.factorial_iterative.argtypes = [c_int]

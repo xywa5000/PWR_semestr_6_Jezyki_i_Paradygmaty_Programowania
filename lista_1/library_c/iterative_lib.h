@@ -3,13 +3,13 @@
 #include <stdbool.h>
 #include "struct_lib.h"
 
-// Deklaracja funkcji rekurencyjnej obliczającej silnię
+// Deklaracja funkcji iteracyjnej obliczającej silnię
 long long factorial_iterative(int n);
 
-// Deklaracja funkcji rekurencyjnej obliczającej największy wspólny dzielnik (NWD)
+// Deklaracja funkcji iteracyjnej obliczającej największy wspólny dzielnik (NWD)
 unsigned int gcd_iterative(unsigned int a, unsigned int b);
 
-// Deklaracja funkcji rekurencyjnej rozwiązującej liniowe równanie diofantyczne
+// Deklaracja funkcji iteracyjnej rozwiązującej liniowe równanie diofantyczne
 Solution diophantine_iterative(int a, int b, int c);
 
 #endif /* ITERATIVEE_LIB_H */

@@ -12,7 +12,7 @@ long long factorial_iterative_python (int n) {
     // Dodanie bieżącego katalogu do ścieżki poszukiwania modułów
     PyObject *sys = PyImport_ImportModule("sys");
     PyObject *path = PyObject_GetAttrString(sys, "path");
-    PyList_Append(path, PyUnicode_FromString("./python_library"));
+    PyList_Append(path, PyUnicode_FromString("./library_python"));
 
     // Importowanie modułu Pythona
     PyObject* pModule = PyImport_ImportModule("iterative_lib");
@@ -56,7 +56,7 @@ unsigned int gcd_iterative_python (unsigned int n, unsigned int m) {
     Py_Initialize();
     PyObject *sys = PyImport_ImportModule("sys");
     PyObject *path = PyObject_GetAttrString(sys, "path");
-    PyList_Append(path, PyUnicode_FromString("./python_library"));
+    PyList_Append(path, PyUnicode_FromString("./library_python"));
     PyObject* pModule = PyImport_ImportModule("iterative_lib");
 
     if (pModule != NULL) {
@@ -91,7 +91,7 @@ Solution diophantine_iterative_python (int a, int b, int c) {
     Py_Initialize();
     PyObject *sys = PyImport_ImportModule("sys");
     PyObject *path = PyObject_GetAttrString(sys, "path");
-    PyList_Append(path, PyUnicode_FromString("./python_library"));
+    PyList_Append(path, PyUnicode_FromString("./library_python"));
     PyObject* pModule = PyImport_ImportModule("iterative_lib");
 
     if (pModule != NULL) {
@@ -134,7 +134,7 @@ long long factorial_recursive_python (int n) {
     Py_Initialize();
     PyObject *sys = PyImport_ImportModule("sys");
     PyObject *path = PyObject_GetAttrString(sys, "path");
-    PyList_Append(path, PyUnicode_FromString("./python_library"));
+    PyList_Append(path, PyUnicode_FromString("./library_python"));
     PyObject* pModule = PyImport_ImportModule("recursive_lib");
 
     if (pModule != NULL) {
@@ -168,7 +168,7 @@ unsigned int gcd_recursive_python (unsigned int n, unsigned int m) {
     Py_Initialize();
     PyObject *sys = PyImport_ImportModule("sys");
     PyObject *path = PyObject_GetAttrString(sys, "path");
-    PyList_Append(path, PyUnicode_FromString("./python_library"));
+    PyList_Append(path, PyUnicode_FromString("./library_python"));
     PyObject* pModule = PyImport_ImportModule("recursive_lib");
 
     if (pModule != NULL) {
@@ -203,7 +203,7 @@ Solution diophantine_recursive_python (int a, int b, int c) {
     Py_Initialize();
     PyObject *sys = PyImport_ImportModule("sys");
     PyObject *path = PyObject_GetAttrString(sys, "path");
-    PyList_Append(path, PyUnicode_FromString("./python_library"));
+    PyList_Append(path, PyUnicode_FromString("./library_python"));
     PyObject* pModule = PyImport_ImportModule("recursive_lib");
     if (pModule != NULL) {
         PyObject* pFunc = PyObject_GetAttrString(pModule, "diophantine_recursive");

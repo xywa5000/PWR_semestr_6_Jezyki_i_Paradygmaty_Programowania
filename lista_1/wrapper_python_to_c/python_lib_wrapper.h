@@ -9,13 +9,13 @@ typedef struct {
     bool err;
 } Solution;
 
-// Deklaracja funkcji rekurencyjnej obliczającej silnię
+// Deklaracja funkcji iteracyjnej obliczającej silnię
 long long factorial_iterative_python(int n);
 
-// Deklaracja funkcji rekurencyjnej obliczającej największy wspólny dzielnik (NWD)
+// Deklaracja funkcji iteracyjnej obliczającej największy wspólny dzielnik (NWD)
 unsigned int gcd_iterative_python(unsigned int a, unsigned int b);
 
-// Deklaracja funkcji rekurencyjnej rozwiązującej liniowe równanie diofantyczne
+// Deklaracja funkcji iteracyjnej rozwiązującej liniowe równanie diofantyczne
 Solution diophantine_iterative_python(int a, int b, int c);
 
 // Deklaracja funkcji rekurencyjnej obliczającej silnię

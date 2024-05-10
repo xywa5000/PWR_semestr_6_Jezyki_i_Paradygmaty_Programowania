@@ -1,3 +1,5 @@
+-- Testowanie całego pakietu
+
 with Ada.Text_IO; use Ada.Text_IO;
 with Iterative_Lib; use Iterative_Lib;
 with Recursive_Lib; use Recursive_Lib;
