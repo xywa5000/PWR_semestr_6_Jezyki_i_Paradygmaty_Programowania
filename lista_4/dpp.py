@@ -68,7 +68,9 @@ def philosopher(i):
         print(f"\t\t\t\t\t\t\t\t\t\t\tPhilosopher {i} has finished eating {k} meals.")
 
 if __name__ == "__main__":
-    print("dp_14")
+
+    print(f"There are {N} philosophers sitting at a table.")
+    print(f"Each philosopher will eat {k} meals.")
 
     threads = [threading.Thread(target=philosopher, args=(i,)) for i in range(N)]
     for t in threads:

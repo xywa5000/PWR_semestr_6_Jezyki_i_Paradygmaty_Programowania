@@ -67,7 +67,7 @@ func (phil *Philosopher) dine(announce chan *Philosopher, k int) {
 
 func main() {
 	n := 5 // liczba filozofów
-	k := 2 // liczba posiłków dla każdego filozofa
+	k := 3 // liczba posiłków dla każdego filozofa
 	philosophers := make([]*Philosopher, n)
 	var phil *Philosopher
 	for i := 0; i < n; i++ {
@@ -77,13 +77,13 @@ func main() {
 	philosophers[0].neighbor = phil
 	fmt.Printf("There are %d philosophers sitting at a table.\n", n)
 	fmt.Printf("Each philosopher will eat %d meals.\n", k)
-	fmt.Println("They each have one chopstick, and must borrow from their neighbor to eat.")
 	announce := make(chan *Philosopher)
 	for _, phil := range philosophers {
 		go phil.dine(announce, k)
 	}
 	for i := 0; i < n; i++ {
 		phil := <-announce
-		fmt.Printf("\t\t\t\t\t\t\t\t\t\t\tPhilosopher %d is done dining.\n", phil.number)
+		fmt.Printf("\t\t\t\t\t\t\t\t\t\t\tPhilosopher %d has finished eating %d meals.\n", phil.number, k)
 	}
+	fmt.Printf("All philosophers have eaten their meals.\n")
 }
