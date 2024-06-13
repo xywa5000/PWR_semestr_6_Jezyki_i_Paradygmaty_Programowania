@@ -1,0 +1,21 @@
+(defun prime_factors (n &optional (d 2))
+    (if (<= n 1)
+        '()
+        (if (= 0 (mod n d))
+            (cons d (prime_factors (/ n d) d))
+            (prime_factors n (1+ d)))))
+
+(defun totient2 (n)
+    (let* ((factors (remove-duplicates (prime_factors n)))
+        (result n))
+    (dolist (p factors result)
+        (setf result (* result (- 1 (/ 1.0 p)))))
+    (floor result)))
+
+(defun main ()
+    (format t "totient2(10) = ~a~%" (totient2 10))
+    (format t "totient2(20) = ~a~%" (totient2 20))
+    (format t "totient2(50) = ~a~%" (totient2 50))
+    (format t "totient2(100) = ~a~%" (totient2 100)))
+
+(main)

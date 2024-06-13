@@ -1,0 +1,16 @@
+(defun binomial2 (n k)
+    (let ((triangle (make-array (1+ n) :initial-element nil)))
+        (dotimes (i (1+ n))
+            (setf (aref triangle i) (make-array (1+ i) :initial-element 1)))
+        (dotimes (i n)
+            (dotimes (j i)
+                (setf (aref (aref triangle (1+ i)) (1+ j))
+                    (+ (aref (aref triangle i) j) (aref (aref triangle i) (1+ j))))))
+        (aref (aref triangle n) k)))
+
+(defun main ()
+    (format t "(binomial2 5 2) = ~a~%" (binomial2 5 2))
+    (format t "(binomial2 40 15) = ~a~%" (binomial2 40 15))
+    (format t "(binomial2 250 35) = ~a~%" (binomial2 6 4)))
+
+(main)
