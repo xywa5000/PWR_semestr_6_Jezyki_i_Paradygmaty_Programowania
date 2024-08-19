@@ -8,7 +8,7 @@ Jezyki i Paradygmaty Programowania
 
 ## Lista 0.
 
-Hello World! - zainstalowanie kompilatora lub interpretera dla każdego z używanych języków programowania i uruchumienie prostego programu.
+Hello World! - zainstalowanie kompilatora lub interpretera dla każdego z używanych języków programowania i uruchomienie prostego programu.
 
 ## Lista 1.
 
